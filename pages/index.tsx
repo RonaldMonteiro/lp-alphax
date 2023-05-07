@@ -3,6 +3,8 @@ import Image from "next/image";
 import styles from "@/styles/index.module.scss";
 
 import logo from "@/public/logo.png";
+import logoMobile from "@/public/logo-mobile.png";
+
 import arrow from "@/public/arrow.svg";
 import iconDefault from "@/public/icondefault.svg";
 import imgDefault from "@/public/imgdefault.svg";
@@ -21,7 +23,9 @@ export default function Home() {
         <section className={styles["first-section"]}>
           <header>
             <div>
-              <Image src={logo} height={0} width={0} alt="" />
+              <Image className={styles["first-image-mobile"]} src={logoMobile} height={0} width={0} alt="" />
+              <Image className={styles["first-image"]} src={logo} height={0} width={0} alt="" />
+
               <nav>
                 <a className={styles["nav-link"]}>Lorem Ipsum</a>
                 <a className={styles["nav-link"]}>Lorem Ipsum</a>
@@ -29,6 +33,7 @@ export default function Home() {
               </nav>
             </div>
             <a className={styles["nav-btn"]}>Lorem Ipsum dolor</a>
+            <button></button>
           </header>
           <div className={styles["first-box-headline"]}>
             <h1>
@@ -85,7 +90,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className={styles["second-section"]}>
+        {/* <section className={styles["second-section"]}>
           <Image src={imgDefault} height={0} width={0} alt="" />
           <div>
             <h1>
@@ -231,7 +236,7 @@ export default function Home() {
           </div>
 
         </section>
-        <footer></footer>
+        <footer></footer> */}
       </main>
     </>
   );

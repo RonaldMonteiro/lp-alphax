@@ -8,23 +8,7 @@ $white: #ffffff;
 $black: #4f4f4e;
 $gray: #a7a4a4;
 
-// --- 🖋️ Typographical --- //
-
-.title {
-  font-weight: 700;
-  font-size: 45px;
-  line-height: 55px;
-  color: $black;
-}
-
-.paragraph {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  color: $gray;
-}
-
-// ---  Mixins --- //
+// ---  Mixins Classes --- //
 
 @mixin flexbox($justify, $align, $direction) {
   display: flex;
@@ -40,6 +24,63 @@ $gray: #a7a4a4;
   color: $color;
 }
 
+// ---  Mixins Media Query --- //
+
+@mixin screen-xl {
+  @media (max-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (max-width: 1150px) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (max-width: 950px) {
+    @content;
+  }
+}
+
+@mixin screen-sm {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin screen-xs {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+// --- 🖋️ Typographical --- //
+
+.title {
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 55px;
+  color: $black;
+}
+
+.paragraph {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: $gray;
+  @include screen-md() {
+    font-size: 25px;
+    line-height: 38px;
+  }
+
+  @include screen-sm {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
 // --- 🖼️ Classes --- //
 
 .first-section {
@@ -50,6 +91,10 @@ $gray: #a7a4a4;
   background-position: center;
   background-size: cover;
 
+  @include screen-md {
+    background-position: left;
+  }
+
   header {
     width: 100%;
     display: flex;
@@ -57,10 +102,43 @@ $gray: #a7a4a4;
     justify-content: space-between;
     align-items: center;
     padding: 0px 100px;
+    @include screen-lg() {
+      padding: 0px 50px;
+      padding-top: 15px;
+    }
+
+    @include screen-sm {
+      padding: 0px 30px;
+      padding-top: 5px;
+    }
+
+    .first-image {
+      @include screen-sm {
+        display: none;
+      }
+    }
+
+    .first-image-mobile {
+      display: none;
+      @include screen-sm {
+        display: flex;
+        height: auto;
+        width: 45px;
+      }
+    }
 
     div {
       @include flexbox(space-between, center, row);
       width: 46%;
+      @include screen-xl {
+        width: 60%;
+      }
+      @include screen-lg {
+        width: 70%;
+      }
+      @include screen-sm {
+        width: 20%;
+      }
 
       nav {
         width: 350px;
@@ -68,6 +146,9 @@ $gray: #a7a4a4;
 
         .nav-link {
           @include type(400, 15px, 24px, $white);
+        }
+        @include screen-md {
+          display: none;
         }
       }
     }
@@ -80,6 +161,41 @@ $gray: #a7a4a4;
       background: #ffffff;
       border-radius: 10px;
       filter: drop-shadow(0px 0px 50px #ffffff);
+
+      @include screen-sm {
+        width: 180px;
+      }
+
+      @include screen-xs {
+        width: 160px;
+        height: 40px;
+      }
+    }
+
+    button {
+      display: none;
+
+      @include screen-md {
+        display: flex;
+        border: none;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        background-image: url("../public/menu-mobile.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-left: 30px;
+      }
+      @include screen-sm {
+        margin-left: 0px;
+        width: 35px;
+        height: 35px;
+      }
+      @include screen-xs {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 
@@ -89,8 +205,59 @@ $gray: #a7a4a4;
     width: 60%;
     padding: 0px 100px 0px 200px;
 
+    @include screen-xl {
+      padding: 0px 80px 0px 150px;
+    }
+    @include screen-lg() {
+      padding: 0px 0px 0px 110px;
+      height: 80vh;
+    }
+    @include screen-md {
+      padding: 0px 60px 0px 60px;
+      height: 30%;
+      width: 100%;
+      @include flexbox(flex-end, center, column);
+    }
+    @include screen-sm {
+      padding: 0px 15px 0px 15px;
+      height: 25%;
+    }
+    @include screen-xs {
+      padding: 0px 15px 0px 15px;
+      height: 26%;
+    }
+
+    @media (max-width: 380px) {
+      height: 28%;
+    }
+
     h1 {
       @include type(700, 60px, 70px, $white);
+      @include screen-xl {
+        @include type(700, 50px, 70px, $white);
+      }
+      @include screen-lg() {
+        @include type(700, 40px, 50px, $white);
+      }
+      @include screen-md() {
+        @include type(700, 70px, 85px, $white);
+        text-align: center;
+      }
+
+      @media (max-width: 850px) {
+        @include type(700, 65px, 85px, $white);
+      }
+
+      @media (max-width: 780px) {
+        @include type(700, 60px, 85px, $white);
+      }
+      @include screen-sm {
+        @include type(700, 45px, 60px, $white);
+      }
+      @include screen-xs {
+        @include type(700, 45px, 55px, $white);
+      }
+
       span {
         color: $secondary;
       }
@@ -98,8 +265,12 @@ $gray: #a7a4a4;
 
     p {
       @extend .paragraph;
-      color: #d9d9d9;
+      color: $white;
       margin: 40px 0px;
+
+      @include screen-md {
+        text-align: center;
+      }
     }
 
     a {
@@ -110,6 +281,19 @@ $gray: #a7a4a4;
       padding: 20px 30px;
       @include type(600, 15px, 24px, $tertiary);
       transition: all 1s;
+
+      @include screen-md {
+        padding: 30px 200px;
+        @include type(600, 23px, 24px, $tertiary);
+      }
+      @include screen-sm {
+        padding: 30px 50px;
+        @include type(600, 23px, 24px, $tertiary);
+      }
+      @include screen-xs {
+        padding: 30px 30px;
+        @include type(600, 20px, 24px, $tertiary);
+      }
 
       &:hover {
         background: #e6e6e6;
@@ -133,6 +317,13 @@ $gray: #a7a4a4;
     height: 40%;
     padding: 0px 165px;
 
+    @include screen-md {
+      height: 70%;
+      @include flexbox(space-evenly, center, column);
+      padding: 0px 0px;
+      padding-top: 70px;
+    }
+
     .first-card {
       width: 364px;
       min-height: 300px;
@@ -144,20 +335,58 @@ $gray: #a7a4a4;
       @include flexbox(center, flex-start, row);
       padding-top: 35px;
 
+      @include screen-md {
+        padding-top: 50px;
+
+        width: 750px;
+        min-height: 400px;
+      }
+
+      @media (max-width: 780px) {
+        width: 700px;
+      }
+
+      @include screen-sm {
+        padding-top: 50px;
+
+        width: 92%;
+        min-height: 500px;
+      }
+
       img {
         margin-right: 15px;
+        @include screen-md {
+          width: 15%;
+          height: auto;
+        }
       }
 
       div {
         width: 230px;
+        @include screen-md {
+          width: 70%;
+        }
 
         h2 {
           @include type(600, 21px, 33px, $white);
           margin: 10px 0px;
+
+          @include screen-md {
+            @include type(600, 35px, 33px, $white);
+          }
+          @include screen-sm {
+            @include type(600, 30px, 33px, $white);
+          }
         }
 
         p {
           @include type(400, 14px, 20px, $white);
+          @include screen-md {
+            @include type(400, 22px, 40px, $white);
+          }
+          @include screen-sm {
+            @include type(400, 20px, 35px, $white);
+          }
         }
       }
     }
@@ -279,22 +508,18 @@ $gray: #a7a4a4;
 
         img {
           height: auto;
-          width: 30%
-
+          width: 30%;
         }
 
         h2 {
           @include type(600, 26px, 125%, $white);
           margin-top: 10px;
-
-
         }
 
         p {
           @include type(400, 16px, 150%, $white);
           width: 80%;
           margin-top: 10px;
-
         }
       }
     }
@@ -306,31 +531,29 @@ $gray: #a7a4a4;
   @include flexbox(center, center, row);
   padding-top: 50px;
 
-
   .fifth-frame {
     @include flexbox(flex-start, center, column);
     width: 90%;
-    border: solid 2px #D9D9D9;
+    border: solid 2px #d9d9d9;
     border-radius: 20px;
     height: 85%;
 
     .nav-select {
       @include flexbox(space-evenly, center, row);
       width: 60%;
-      border: solid 2px #D9D9D9;
+      border: solid 2px #d9d9d9;
       border-radius: 20px;
       height: 120px;
       position: relative;
       background-color: white;
       z-index: 20;
-      top:-50px;
-    
+      top: -50px;
 
       .radio {
         input[type="radio"] {
           display: none;
         }
-        
+
         label {
           display: inline-block;
           padding: 5px 10px;
@@ -341,23 +564,18 @@ $gray: #a7a4a4;
         }
 
         .button-label {
-          @include type(500, 18px, 20px, $gray );
+          @include type(500, 18px, 20px, $gray);
           transition: all 0.5s;
-
         }
-        
+
         input[type="radio"]:checked + .button-label {
           @include flexbox(center, center, row);
-          @include type(600, 18px, 20px, $white );
+          @include type(600, 18px, 20px, $white);
           padding: 15px 30px;
-          background: #D0B485;
+          background: #d0b485;
           border-radius: 10px;
-                
         }
       }
-      
-  
-
     }
 
     .main-select {
@@ -370,20 +588,20 @@ $gray: #a7a4a4;
         width: 35%;
         height: auto;
         margin-left: 75px;
-    
+
         h1 {
           @extend .title;
-    
+
           span {
             color: #ffc553;
           }
         }
-    
+
         p {
           @extend .paragraph;
           margin: 30px 0px;
         }
-    
+
         a {
           @include flexbox(center, center, row);
           background: $primary;
@@ -392,18 +610,14 @@ $gray: #a7a4a4;
           @include type(600, 15px, 24px, $white);
           transition: all 1s;
           width: 300px;
-    
+
           &:hover {
             background: #e6e6e6;
           }
         }
       }
-    
-
     }
   }
-
-
 }
 
 .sixth-section {
@@ -414,27 +628,25 @@ $gray: #a7a4a4;
     @extend .title;
     text-align: center;
     width: 40%;
-
   }
 
   .sixth-paragraph {
     @extend .paragraph;
     text-align: center;
     width: 40%;
-
   }
 
   .sixth-frame {
     @include flexbox(center, center, row);
     width: 100%;
     height: auto;
-    padding-top: 70px ;
+    padding-top: 70px;
 
     .sixth-divider {
-width: 0px;
-height: 500px;
-border: 1px solid $gray;
-margin: 0px 50px;
+      width: 0px;
+      height: 500px;
+      border: 1px solid $gray;
+      margin: 0px 50px;
     }
 
     .sixth-card {
@@ -449,32 +661,26 @@ margin: 0px 50px;
         margin-bottom: 15px;
       }
 
-
       div {
         margin-bottom: 15px;
 
-      img {
-        height: auto;
-        width: 30px;
-        margin-right: 15px;
-        position: relative;
-        top: 20px
-      }
+        img {
+          height: auto;
+          width: 30px;
+          margin-right: 15px;
+          position: relative;
+          top: 20px;
+        }
 
-      h2 {
-        @include type(600, 20px, 30px, $black);
-        margin-bottom: 15px;
+        h2 {
+          @include type(600, 20px, 30px, $black);
+          margin-bottom: 15px;
+        }
 
-      }
-
-      p {
-        @include type(400, 18px, 28px, $gray)
-
+        p {
+          @include type(400, 18px, 28px, $gray);
+        }
       }
     }
-    }
-  
   }
-
-
 }
