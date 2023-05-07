@@ -1,0 +1,480 @@
+// --- 🎨 Color palette --- //
+
+$default: #868686a8;
+$primary: #d0b485;
+$secondary: #ffc553;
+$tertiary: #c59845;
+$white: #ffffff;
+$black: #4f4f4e;
+$gray: #a7a4a4;
+
+// --- 🖋️ Typographical --- //
+
+.title {
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 55px;
+  color: $black;
+}
+
+.paragraph {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: $gray;
+}
+
+// ---  Mixins --- //
+
+@mixin flexbox($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin type($weight, $size, $height, $color) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
+
+// --- 🖼️ Classes --- //
+
+.first-section {
+  @include flexbox(flex-start, flex-start, column);
+  grid-area: first;
+  background-image: url("/background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  header {
+    width: 100%;
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px;
+
+    div {
+      @include flexbox(space-between, center, row);
+      width: 46%;
+
+      nav {
+        width: 350px;
+        @include flexbox(space-between, center, row);
+
+        .nav-link {
+          @include type(400, 15px, 24px, $white);
+        }
+      }
+    }
+    .nav-btn {
+      padding: 10px;
+      @include flexbox(center, center, row);
+      @include type(600, 14px, 20px, $tertiary);
+      width: 174px;
+      height: 43px;
+      background: #ffffff;
+      border-radius: 10px;
+      filter: drop-shadow(0px 0px 50px #ffffff);
+    }
+  }
+
+  .first-box-headline {
+    @include flexbox(flex-end, flex-start, column);
+    height: 75vh;
+    width: 60%;
+    padding: 0px 100px 0px 200px;
+
+    h1 {
+      @include type(700, 60px, 70px, $white);
+      span {
+        color: $secondary;
+      }
+    }
+
+    p {
+      @extend .paragraph;
+      color: #d9d9d9;
+      margin: 40px 0px;
+    }
+
+    a {
+      @include flexbox(center, center, row);
+      background: #ffffff;
+      border-radius: 8px;
+      filter: drop-shadow(0px 4px 50px #ffffff);
+      padding: 20px 30px;
+      @include type(600, 15px, 24px, $tertiary);
+      transition: all 1s;
+
+      &:hover {
+        background: #e6e6e6;
+
+        img {
+          position: relative;
+          left: 6px;
+        }
+      }
+
+      img {
+        margin-left: 8px;
+        transition: all 1s;
+      }
+    }
+  }
+
+  .first-box-cards {
+    @include flexbox(space-evenly, center, row);
+    width: 100%;
+    height: 40%;
+    padding: 0px 165px;
+
+    .first-card {
+      width: 364px;
+      min-height: 300px;
+      height: auto;
+      filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(7.5px);
+      border-radius: 5px;
+      @include flexbox(center, flex-start, row);
+      padding-top: 35px;
+
+      img {
+        margin-right: 15px;
+      }
+
+      div {
+        width: 230px;
+
+        h2 {
+          @include type(600, 21px, 33px, $white);
+          margin: 10px 0px;
+        }
+
+        p {
+          @include type(400, 14px, 20px, $white);
+        }
+      }
+    }
+  }
+}
+
+.second-section {
+  grid-area: second;
+  @include flexbox(center, center, row);
+
+  div {
+    width: 35%;
+    height: auto;
+    margin-left: 75px;
+
+    h1 {
+      @extend .title;
+
+      span {
+        color: #ffc553;
+      }
+    }
+
+    p {
+      @extend .paragraph;
+      margin: 30px 0px;
+    }
+
+    a {
+      @include flexbox(center, center, row);
+      background: $primary;
+      border-radius: 8px;
+      filter: drop-shadow(0px 4px 50px #ffffff);
+      padding: 20px 30px;
+      @include type(600, 15px, 24px, $white);
+      transition: all 1s;
+      width: 300px;
+
+      &:hover {
+        background: #e6e6e6;
+      }
+    }
+  }
+}
+
+.third-section {
+  grid-area: third;
+  @include flexbox(center, center, row);
+
+  div {
+    width: 35%;
+    height: auto;
+    margin-right: 75px;
+    text-align: end;
+
+    h1 {
+      @extend .title;
+
+      span {
+        color: #ffc553;
+      }
+    }
+
+    p {
+      @extend .paragraph;
+      margin: 30px 0px;
+    }
+  }
+}
+
+.fourth-section {
+  grid-area: fourth;
+  @include flexbox(center, center, row);
+
+  .fourth-frame {
+    @include flexbox(center, center, column);
+
+    background-color: #4f4f4e;
+    width: 90%;
+    height: 100%;
+    border-radius: 20px;
+    background-image: url("/background-cards.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    h1 {
+      @extend .title;
+      color: $white;
+      width: 50%;
+      text-align: center;
+    }
+
+    p {
+      @extend .paragraph;
+      color: $white;
+      width: 50%;
+      text-align: center;
+
+      margin: 30px 0px;
+    }
+
+    .row-cards {
+      @include flexbox(space-evenly, center, row);
+      width: 100%;
+      height: auto;
+      padding: 0px 70px;
+
+      div {
+        @include flexbox(center, center, column);
+        width: 354px;
+        height: 414px;
+        left: 107px;
+        top: 402px;
+        filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(7.5px);
+        border-radius: 10px;
+
+        img {
+          height: auto;
+          width: 30%
+
+        }
+
+        h2 {
+          @include type(600, 26px, 125%, $white);
+          margin-top: 10px;
+
+
+        }
+
+        p {
+          @include type(400, 16px, 150%, $white);
+          width: 80%;
+          margin-top: 10px;
+
+        }
+      }
+    }
+  }
+}
+
+.fifth-section {
+  grid-area: fifth;
+  @include flexbox(center, center, row);
+  padding-top: 50px;
+
+
+  .fifth-frame {
+    @include flexbox(flex-start, center, column);
+    width: 90%;
+    border: solid 2px #D9D9D9;
+    border-radius: 20px;
+    height: 85%;
+
+    .nav-select {
+      @include flexbox(space-evenly, center, row);
+      width: 60%;
+      border: solid 2px #D9D9D9;
+      border-radius: 20px;
+      height: 120px;
+      position: relative;
+      background-color: white;
+      z-index: 20;
+      top:-50px;
+    
+
+      .radio {
+        input[type="radio"] {
+          display: none;
+        }
+        
+        label {
+          display: inline-block;
+          padding: 5px 10px;
+          border: 1px solid #ccc;
+          cursor: pointer;
+          user-select: none;
+          background-color: #e0e012;
+        }
+
+        .button-label {
+          @include type(500, 18px, 20px, $gray );
+          transition: all 0.5s;
+
+        }
+        
+        input[type="radio"]:checked + .button-label {
+          @include flexbox(center, center, row);
+          @include type(600, 18px, 20px, $white );
+          padding: 15px 30px;
+          background: #D0B485;
+          border-radius: 10px;
+                
+        }
+      }
+      
+  
+
+    }
+
+    .main-select {
+      @include flexbox(center, flex-start, row);
+      width: 100%;
+      height: 100%;
+      margin-top: 30px;
+
+      div {
+        width: 35%;
+        height: auto;
+        margin-left: 75px;
+    
+        h1 {
+          @extend .title;
+    
+          span {
+            color: #ffc553;
+          }
+        }
+    
+        p {
+          @extend .paragraph;
+          margin: 30px 0px;
+        }
+    
+        a {
+          @include flexbox(center, center, row);
+          background: $primary;
+          border-radius: 8px;
+          padding: 20px 30px;
+          @include type(600, 15px, 24px, $white);
+          transition: all 1s;
+          width: 300px;
+    
+          &:hover {
+            background: #e6e6e6;
+          }
+        }
+      }
+    
+
+    }
+  }
+
+
+}
+
+.sixth-section {
+  grid-area: sixth;
+  @include flexbox(center, center, column);
+
+  h1 {
+    @extend .title;
+    text-align: center;
+    width: 40%;
+
+  }
+
+  .sixth-paragraph {
+    @extend .paragraph;
+    text-align: center;
+    width: 40%;
+
+  }
+
+  .sixth-frame {
+    @include flexbox(center, center, row);
+    width: 100%;
+    height: auto;
+    padding-top: 70px ;
+
+    .sixth-divider {
+width: 0px;
+height: 500px;
+border: 1px solid $gray;
+margin: 0px 50px;
+    }
+
+    .sixth-card {
+      width: 30%;
+      height: auto;
+      @include flexbox(center, flex-start, column);
+
+      img {
+        height: auto;
+        width: 120px;
+        align-self: center;
+        margin-bottom: 15px;
+      }
+
+
+      div {
+        margin-bottom: 15px;
+
+      img {
+        height: auto;
+        width: 30px;
+        margin-right: 15px;
+        position: relative;
+        top: 20px
+      }
+
+      h2 {
+        @include type(600, 20px, 30px, $black);
+        margin-bottom: 15px;
+
+      }
+
+      p {
+        @include type(400, 18px, 28px, $gray)
+
+      }
+    }
+    }
+  
+  }
+
+
+}
