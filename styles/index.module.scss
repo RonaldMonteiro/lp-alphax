@@ -63,6 +63,27 @@ $gray: #a7a4a4;
   font-size: 45px;
   line-height: 55px;
   color: $black;
+
+  @include screen-xl {
+    font-size: 40px;
+  }
+  @include screen-lg {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  @include screen-md {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  @include screen-sm {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  @include screen-xs {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }
 
 .paragraph {
@@ -317,6 +338,20 @@ $gray: #a7a4a4;
     height: 40%;
     padding: 0px 165px;
 
+    @include screen-xl {
+      height: 40%;
+      // @include flexbox(space-evenly, center, column);
+      padding: 0px 0px;
+      padding-top: 70px;
+    }
+
+    @include screen-lg {
+      height: 40%;
+      // @include flexbox(space-evenly, center, column);
+      padding: 0px 0px;
+      padding-top: 70px;
+    }
+
     @include screen-md {
       height: 70%;
       @include flexbox(space-evenly, center, column);
@@ -334,6 +369,12 @@ $gray: #a7a4a4;
       border-radius: 5px;
       @include flexbox(center, flex-start, row);
       padding-top: 35px;
+
+      @include screen-lg {
+        width: 320px;
+        min-height: 320px;
+        padding-right: 20px;
+      }
 
       @include screen-md {
         padding-top: 50px;
@@ -363,6 +404,9 @@ $gray: #a7a4a4;
 
       div {
         width: 230px;
+        @include screen-lg {
+          width: 180px;
+        }
         @include screen-md {
           width: 70%;
         }
@@ -375,7 +419,7 @@ $gray: #a7a4a4;
             @include type(600, 35px, 33px, $white);
           }
           @include screen-sm {
-            @include type(600, 30px, 33px, $white);
+            @include type(600, 28px, 33px, $white);
           }
         }
 
@@ -385,7 +429,7 @@ $gray: #a7a4a4;
             @include type(400, 22px, 40px, $white);
           }
           @include screen-sm {
-            @include type(400, 20px, 35px, $white);
+            @include type(400, 18px, 30px, $white);
           }
         }
       }
@@ -396,11 +440,31 @@ $gray: #a7a4a4;
 .second-section {
   grid-area: second;
   @include flexbox(center, center, row);
+  @include screen-md {
+    @include flexbox(center, center, column);
+  }
+  img {
+    @include screen-sm {
+      width: 90%;
+    }
+  }
 
   div {
     width: 35%;
     height: auto;
     margin-left: 75px;
+
+    @include screen-md {
+      @include flexbox(inherit, inherit, inherit);
+      width: 70%;
+      margin-left: 0px;
+      text-align: center;
+      margin-top: 50px;
+    }
+    @include screen-sm {
+      width: 90%;
+      margin-top: 15px;
+    }
 
     h1 {
       @extend .title;
@@ -435,12 +499,35 @@ $gray: #a7a4a4;
 .third-section {
   grid-area: third;
   @include flexbox(center, center, row);
+  @include screen-md {
+    @include flexbox(center, center, column-reverse);
+  }
+
+  img {
+    @include screen-sm {
+      width: 90%;
+    }
+  }
 
   div {
     width: 35%;
     height: auto;
     margin-right: 75px;
     text-align: end;
+    @include screen-md {
+      @include flexbox(inherit, inherit, inherit);
+      @include flexbox(center, center, column);
+
+      width: 70%;
+      margin-right: 0px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    @include screen-sm {
+      width: 90%;
+      margin-top: 15px;
+    }
 
     h1 {
       @extend .title;
@@ -478,6 +565,13 @@ $gray: #a7a4a4;
       color: $white;
       width: 50%;
       text-align: center;
+
+      @include screen-md {
+        width: 80%;
+      }
+      @include screen-sm {
+        width: 90%;
+      }
     }
 
     p {
@@ -487,6 +581,12 @@ $gray: #a7a4a4;
       text-align: center;
 
       margin: 30px 0px;
+      @include screen-md {
+        width: 80%;
+      }
+      @include screen-sm {
+        width: 90%;
+      }
     }
 
     .row-cards {
@@ -495,16 +595,32 @@ $gray: #a7a4a4;
       height: auto;
       padding: 0px 70px;
 
+      @include screen-lg {
+        padding: 0px 30px;
+        @include flexbox(space-between, center, column);
+      }
+
       div {
         @include flexbox(center, center, column);
         width: 354px;
         height: 414px;
-        left: 107px;
-        top: 402px;
         filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(7.5px);
         border-radius: 10px;
+        @include screen-xl {
+          width: 320px;
+        }
+        @include screen-lg {
+          margin-bottom: 30px;
+        }
+        @include screen-sm {
+          width: 335px;
+        }
+
+        @include screen-xs {
+          width: 300px;
+        }
 
         img {
           height: auto;
@@ -549,6 +665,16 @@ $gray: #a7a4a4;
       z-index: 20;
       top: -50px;
 
+      @include screen-md {
+        width: 80%;
+        height: 150px;
+      }
+      @include screen-sm {
+        width: 80%;
+        height: 300px;
+        @include flexbox(space-evenly, center, column);
+      }
+
       .radio {
         input[type="radio"] {
           display: none;
@@ -584,10 +710,48 @@ $gray: #a7a4a4;
       height: 100%;
       margin-top: 30px;
 
+      @include screen-md {
+        @include flexbox(center, center, column);
+        margin-top: 0px;
+      }
+      @include screen-sm {
+        @include flexbox(flex-start, center, column);
+        margin-top: 0px;
+      }
+
+      img {
+        @include screen-xl {
+          width: 40%;
+        }
+        @include screen-md {
+          width: 60%;
+          margin-bottom: 50px;
+        }
+
+        @include screen-sm {
+          width: 85%;
+          margin-bottom: 10px;
+        }
+      }
+
       div {
         width: 35%;
         height: auto;
         margin-left: 75px;
+
+        @include screen-xl {
+          width: 40%;
+        }
+        @include screen-md {
+          width: 80%;
+          text-align: center;
+          @include flexbox(center, center, column);
+          margin-left: 0px;
+        }
+
+        @include screen-xs() {
+          width: 90%;
+        }
 
         h1 {
           @extend .title;
@@ -628,12 +792,32 @@ $gray: #a7a4a4;
     @extend .title;
     text-align: center;
     width: 40%;
+
+    @include screen-xl {
+      width: 60%;
+      margin-bottom: 30px;
+    }
+    @include screen-md {
+      width: 70%;
+    }
+    @include screen-sm {
+      width: 90%;
+    }
   }
 
   .sixth-paragraph {
     @extend .paragraph;
     text-align: center;
     width: 40%;
+    @include screen-xl {
+      width: 60%;
+    }
+    @include screen-md {
+      width: 70%;
+    }
+    @include screen-sm {
+      width: 90%;
+    }
   }
 
   .sixth-frame {
@@ -641,18 +825,37 @@ $gray: #a7a4a4;
     width: 100%;
     height: auto;
     padding-top: 70px;
-
+    @include screen-md {
+      @include flexbox(center, center, column);
+    }
     .sixth-divider {
       width: 0px;
       height: 500px;
       border: 1px solid $gray;
       margin: 0px 50px;
+      @include screen-md {
+        display: none;
+      }
     }
 
     .sixth-card {
       width: 30%;
       height: auto;
       @include flexbox(center, flex-start, column);
+      @include screen-xl {
+        width: 35%;
+      }
+      @include screen-lg {
+        width: 35%;
+      }
+      @include screen-md {
+        width: 70%;
+        margin-bottom: 60px;
+      }
+      @include screen-sm {
+        margin-bottom: 80px;
+        width: 80%;
+      }
 
       img {
         height: auto;

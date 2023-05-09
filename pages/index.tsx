@@ -23,8 +23,20 @@ export default function Home() {
         <section className={styles["first-section"]}>
           <header>
             <div>
-              <Image className={styles["first-image-mobile"]} src={logoMobile} height={0} width={0} alt="" />
-              <Image className={styles["first-image"]} src={logo} height={0} width={0} alt="" />
+              <Image
+                className={styles["first-image-mobile"]}
+                src={logoMobile}
+                height={0}
+                width={0}
+                alt=""
+              />
+              <Image
+                className={styles["first-image"]}
+                src={logo}
+                height={0}
+                width={0}
+                alt=""
+              />
 
               <nav>
                 <a className={styles["nav-link"]}>Lorem Ipsum</a>
@@ -90,7 +102,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* <section className={styles["second-section"]}>
+        <section className={styles["second-section"]}>
           <Image src={imgDefault} height={0} width={0} alt="" />
           <div>
             <h1>
@@ -196,47 +208,83 @@ export default function Home() {
           </div>
         </section>
         <section className={styles["sixth-section"]}>
-            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h1>
-            <p className={styles["sixth-paragraph"]}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </p>
+          <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h1>
+          <p className={styles["sixth-paragraph"]}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi{" "}
+          </p>
           <div className={styles["sixth-frame"]}>
             <div className={styles["sixth-card"]}>
               <Image src={iconDefault} height={0} width={0} alt="" />
               <div>
-                <h2><Image src={iconStar} height={0} width={0} alt="" />Lorem ipsum dolor sit amet, consectetur </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <h2>
+                  <Image src={iconStar} height={0} width={0} alt="" />
+                  Lorem ipsum dolor sit amet, consectetur{" "}
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore.
+                </p>
               </div>
               <div>
-                <h2><Image src={iconStar} height={0} width={0} alt="" />Lorem ipsum dolor sit amet, consectetur </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <h2>
+                  <Image src={iconStar} height={0} width={0} alt="" />
+                  Lorem ipsum dolor sit amet, consectetur{" "}
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore.
+                </p>
               </div>
               <div>
-                <h2><Image src={iconStar} height={0} width={0} alt="" />Lorem ipsum dolor sit amet, consectetur </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <h2>
+                  <Image src={iconStar} height={0} width={0} alt="" />
+                  Lorem ipsum dolor sit amet, consectetur{" "}
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore.
+                </p>
               </div>
-
             </div>
-            <div className={styles["sixth-divider"]}/>
+            <div className={styles["sixth-divider"]} />
             <div className={styles["sixth-card"]}>
               <Image src={iconDefault} height={0} width={0} alt="" />
               <div>
-                <h2><Image src={iconStar} height={0} width={0} alt="" />Lorem ipsum dolor sit amet, consectetur </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <h2>
+                  <Image src={iconStar} height={0} width={0} alt="" />
+                  Lorem ipsum dolor sit amet, consectetur{" "}
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore.
+                </p>
               </div>
               <div>
-                <h2><Image src={iconStar} height={0} width={0} alt="" />Lorem ipsum dolor sit amet, consectetur </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <h2>
+                  <Image src={iconStar} height={0} width={0} alt="" />
+                  Lorem ipsum dolor sit amet, consectetur{" "}
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore.
+                </p>
               </div>
               <div>
-                <h2><Image src={iconStar} height={0} width={0} alt="" />Lorem ipsum dolor sit amet, consectetur </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <h2>
+                  <Image src={iconStar} height={0} width={0} alt="" />
+                  Lorem ipsum dolor sit amet, consectetur{" "}
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore.
+                </p>
               </div>
-
             </div>
-
           </div>
-
         </section>
-        <footer></footer> */}
+        <footer></footer>
       </main>
     </>
   );
