@@ -18,7 +18,7 @@ main {
     "footer footer";
 
   grid-template-columns: 100%;
-  grid-template-rows: 150vh 70vh 70vh 110vh 100vh 130vh 0vh;
+  grid-template-rows: 100vh 80vh 80vh 110vh 100vh 130vh 0vh;
   height: auto;
   background-color: #ffffff;
   overflow: hidden;
