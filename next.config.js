@@ -4,11 +4,9 @@
 
 const nextConfig = {
   reactStrictMode: true,
-    i18n: {
-      locales: ['ru-RU', 'en-US', 'es-ES', 'pt-BR'],
-      defaultLocale: 'en-US',
-    
-  }
+  images: {
+    domains: ['www.bandeirasnacionais.com'],
+  },
 
 }
 

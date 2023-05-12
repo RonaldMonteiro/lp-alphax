@@ -15,10 +15,11 @@ main {
     "fourth fourth"
     "fifth fifth"
     "sixth sixth"
+    "seventh seventh"
     "footer footer";
 
   grid-template-columns: 100%;
-  grid-template-rows: 100vh 80vh 80vh 110vh 100vh 130vh 0vh;
+  grid-template-rows: 100vh 80vh 80vh 110vh 100vh 130vh 50vh 60vh;
   height: auto;
   background-color: #ffffff;
   overflow: hidden;
@@ -26,60 +27,56 @@ main {
 
 @media (max-width: 1300px) {
   main {
-    grid-template-rows: 150vh 70vh 70vh 110vh 100vh 160vh 0vh;
+    grid-template-rows: 150vh 70vh 70vh 110vh 100vh 160vh 50vh 0vh;
   }
 }
 
 @media (max-width: 1100px) {
   main {
-    grid-template-rows: 160vh 100vh 90vh 300vh 130vh 180vh 0vh;
+    grid-template-rows: 160vh 100vh 90vh 300vh 130vh 180vh 50vh 0vh;
   }
 }
 
 @media (max-width: 950px) {
   main {
-    grid-template-rows: 180vh 70vh 60vh 160vh 100vh 130vh 0vh;
+    grid-template-rows: 180vh 70vh 60vh 160vh 100vh 130vh 50vh 0vh;
   }
 }
 
 @media (max-width: 850px) {
   main {
-    grid-template-rows: 215vh 90vh 70vh 160vh 120vh 160vh 0vh;
+    grid-template-rows: 215vh 90vh 70vh 160vh 120vh 160vh 50vh 0vh;
   }
 }
 
 @media (max-width: 780px) {
   main {
-    grid-template-rows: 230vh 100vh 90vh 190vh 140vh 180vh 0vh;
+    grid-template-rows: 230vh 100vh 90vh 190vh 140vh 180vh 50vh 0vh;
   }
 }
 
 @media (max-width: 500px) {
   main {
-    grid-template-rows: 280vh 100vh 90vh 215vh 150vh 230vh 0vh;
+    grid-template-rows: 280vh 100vh 90vh 215vh 150vh 230vh 50vh 0vh;
   }
 }
 
 @media (max-width: 400px) {
   main {
-    grid-template-rows: 310vh 100vh 90vh 225vh 155vh 250vh 0vh;
+    grid-template-rows: 310vh 100vh 90vh 225vh 155vh 250vh 50vh 0vh;
   }
 }
 
 @media (max-width: 380px) {
   main {
-    grid-template-rows: 350vh 120vh 115vh 260vh 200vh 330vh 0vh;
+    grid-template-rows: 350vh 120vh 115vh 260vh 200vh 330vh 50vh 0vh;
   }
 }
 
 @media (max-width: 370px) {
   main {
-    grid-template-rows: 350vh 120vh 115vh 260vh 200vh 300vh 0vh;
+    grid-template-rows: 350vh 120vh 115vh 260vh 200vh 300vh 50vh 0vh;
   }
 }
 
-footer {
-  grid-area: footer;
-  display: flex;
-  background-color: #852323;
-}
+
