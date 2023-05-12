@@ -126,6 +126,7 @@ export default function Home() {
     }
   }, [selectedOption]);
   const [open, setOpen] = React.useState(false);
+  const [country, setCountry] = React.useState('us');
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -142,19 +143,24 @@ export default function Home() {
 
   function changeLangEN() {
     setChanged(en);
+    setCountry('us');
     setAnchorEl(null);
   }
 
   function changeLangPT() {
     setChanged(pt);
+    setCountry('br');
     setAnchorEl(null);
   }
   function changeLangES() {
     setChanged(es);
+    setCountry('es');
+
     setAnchorEl(null);
   }
   function changeLangRU() {
     setChanged(ru);
+    setCountry('ru');
     setAnchorEl(null);
   }
 
@@ -203,7 +209,7 @@ export default function Home() {
             >
               <img
                 style={{ height: "auto", width: "30px" }}
-                src="https://www.bandeirasnacionais.com/data/flags/w580/us.webp"
+                src={`https://www.bandeirasnacionais.com/data/flags/w580/${country}.webp`}
               ></img>
             </Button>
             <Menu
