@@ -22,17 +22,16 @@ import token from "@/public/token.png";
 import pay from "@/public/pay.png";
 import logoBottom from "@/public/logo-bottom.png";
 
-import { pt, Structure } from "../lang/index";
+import { pt, Structure, en, es, ru } from "../lang/index";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 export default function Home() {
-  const [changed, setChanged] = React.useState<Structure>(pt);
-
-  function changeLang() {
-    setChanged(pt);
-  }
+  const [changed, setChanged] = React.useState<Structure>(en);
 
   const Card = (
     <>
@@ -132,6 +131,32 @@ export default function Home() {
     setOpen(!open);
   };
 
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const opens = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  function changeLangEN() {
+    setChanged(en);
+    setAnchorEl(null);
+  }
+
+  function changeLangPT() {
+    setChanged(pt);
+    setAnchorEl(null);
+  }
+  function changeLangES() {
+    setChanged(es);
+    setAnchorEl(null);
+  }
+  function changeLangRU() {
+    setChanged(ru);
+    setAnchorEl(null);
+  }
 
   return (
     <>
@@ -144,7 +169,7 @@ export default function Home() {
       <main>
         <section className={styles["first-section"]}>
           <header>
-            <div className={styles['pack-nav']}>
+            <div className={styles["pack-nav"]}>
               <Image
                 className={styles["first-image-mobile"]}
                 src={logoMobile}
@@ -164,69 +189,79 @@ export default function Home() {
                 <a className={styles["nav-link"]}>{changed.nav_one}</a>
                 <a className={styles["nav-link"]}>{changed.nav_second}</a>
                 <a className={styles["nav-link"]}>{changed.nav_third}</a>
-                
               </nav>
             </div>
 
+            <div style={{display:'flex'}}>
 
-            <div className={btn["pack-language-menu"]}>
-      <div className="select-wrap" style={{ marginRight: "15px" }}>
-        <button className={btn["select-toggle"]} onClick={toggleMenu}>
-          <img
-            style={{ height: "auto", width: "30px" }}
-            src="https://www.bandeirasnacionais.com/data/flags/w580/us.webp"
-          />
-        </button>
-        <ul className={btn["select-options"]} style={{ display: open ? "block" : "none" }}>
-          <li>
-            <button>
+            <Button
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+            >
               <img
-                style={{ height: "auto", width: "25px", marginRight: "10px" }}
+                style={{ height: "auto", width: "30px" }}
                 src="https://www.bandeirasnacionais.com/data/flags/w580/us.webp"
-              />
-              EN-US
-            </button>
-          </li>
-          <li>
-            <button>
-              <img
-                style={{ height: "auto", width: "25px", marginRight: "10px" }}
-                src="https://www.bandeirasnacionais.com/data/flags/w580/es.webp"
-              />
-              ES-ES
-            </button>
-          </li>
-          <li>
-            <button>
-              <img
-                style={{ height: "auto", width: "25px", marginRight: "10px" }}
-                src="https://www.bandeirasnacionais.com/data/flags/w580/br.webp"
-              />
-              PT-BR
-            </button>
-          </li>
-          <li>
-            <button>
-              <img
-                style={{ height: "auto", width: "25px", marginRight: "10px" }}
-                src="https://www.bandeirasnacionais.com/data/flags/w580/ru.webp"
-              />
-              RU-RU
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-
-
+              ></img>
+            </Button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={opens}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem
+                onClick={changeLangEN}
+                sx={{ fontSize: 12, color: "gray" }}
+              >
+                <img
+                  style={{ height: "auto", width: "25px", marginRight: "10px" }}
+                  src="https://www.bandeirasnacionais.com/data/flags/w580/us.webp"
+                ></img>
+                EN-US
+              </MenuItem>
+              <MenuItem
+                onClick={changeLangES}
+                sx={{ fontSize: 12, color: "gray" }}
+              >
+                <img
+                  style={{ height: "auto", width: "25px", marginRight: "10px" }}
+                  src="https://www.bandeirasnacionais.com/data/flags/w580/es.webp"
+                ></img>
+                ES-ES
+              </MenuItem>
+              <MenuItem
+                onClick={changeLangPT}
+                sx={{ fontSize: 12, color: "gray" }}
+              >
+                <img
+                  style={{ height: "auto", width: "25px", marginRight: "10px" }}
+                  src="https://www.bandeirasnacionais.com/data/flags/w580/br.webp"
+                ></img>
+                PT-BR
+              </MenuItem>
+              <MenuItem
+                onClick={changeLangRU}
+                sx={{ fontSize: 12, color: "gray" }}
+              >
+                <img
+                  style={{ height: "auto", width: "25px", marginRight: "10px" }}
+                  src="https://www.bandeirasnacionais.com/data/flags/w580/ru.webp"
+                ></img>
+                RU-RU
+              </MenuItem>
+            </Menu>
 
             <a className={styles["nav-btn"]}>{changed.nav_btn}</a>
-
-            <button className={styles['btn-mobile']}></button>
+            </div>
+            <button className={styles["btn-mobile"]}></button>
           </header>
           <div className={styles["first-box-headline"]}>
-            
             <h1>
               {changed.first_title1} <span>{changed.first_title2}</span>{" "}
               {changed.first_title3}
@@ -278,7 +313,7 @@ export default function Home() {
         </section>
         <section className={styles["second-section"]}>
           <Image src={coins} height={0} width={0} alt="" />
-          
+
           <div>
             <h1>
               {changed.second_title1}
@@ -480,21 +515,15 @@ export default function Home() {
         </section>
         <section className={styles["seventh-section"]}>
           <div>
-            <h1>
-              Conheça a plataforma de
-              <br /> investimentos Alphax
-            </h1>
-            <a>Lorem ipsum dolor</a>
+            <h1 dangerouslySetInnerHTML={{ __html: changed.banner_title }}></h1>
+            <a>{changed.banner_btn}</a>
           </div>
         </section>
         <footer className={styles.footer}>
           <div className={styles["footer-frame"]}>
             <div className={styles["card-info"]}>
               <Image src={logoBottom} height={0} width={0} alt="" />
-              <p>
-                Lorem ipsum dolor sit amet,
-                <br /> consectetur adipiscing elit.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: changed.footer_info }}></p>
               <div>
                 <InstagramIcon sx={{ color: "#626262" }} />
                 <FacebookIcon sx={{ color: "#626262" }} />
@@ -502,10 +531,10 @@ export default function Home() {
               </div>
             </div>
             <div className={styles["card-link"]}>
-              <h1>Links</h1>
-              <a>Lorem Ipsum</a>
-              <a>Lorem Ipsum</a>
-              <a>Lorem Ipsum</a>
+              <h1>{changed.footer_link}</h1>
+              <a>{changed.footer_link1}</a>
+              <a>{changed.footer_link2}</a>
+              <a>{changed.footer_link3}</a>
             </div>
           </div>
           <div className={styles["footer-divider"]}></div>

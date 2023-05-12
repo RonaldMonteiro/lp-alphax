@@ -73,20 +73,31 @@ export interface Structure {
   axi_2: string;
   axi_3: string;
   axi_4: string;
+
+  banner_title: string;
+  banner_btn: string;
+
+
+  footer_info: string;  
+  footer_link: string;
+  footer_link1: string;
+  footer_link2: string;
+  footer_link3: string;
+
 }
 
 export const pt: Structure = {
   nav_one: "Quem Somos",
   nav_second: "Alphax Token",
   nav_third: "Brokers",
-  nav_btn: "Lorem ipsum dolor",
+  nav_btn: "Acessar Plataforma",
   first_title1: "Invista com ",
   first_title2: "segurança ",
-  first_title3: "e inteligência em Criptomoedas e Forex",
+  first_title3: "e inteligência",
 
   first_subtitle:
     "Nós nos esforçamos para fornecer a nossos usuários resultados que antes só eram possíveis para grandes bancos. Acreditamos que todos deveriam ter a chance de investir com sabedoria e alcançar seus objetivos financeiros.",
-  first_btn: "Lorem ipsum dolor",
+  first_btn: "Acessar Plataforma",
 
   second_title1: "Quem ",
   second_title2: "Somos",
@@ -94,7 +105,7 @@ export const pt: Structure = {
     "Somos uma <strong>Gestora de Investimentos em Criptomoedas e Forex</strong> com escritório administrativo em Zurique, Suiça. Temos o objetivo de  proporcionar aos usuários resultados que até então somente grande bancos tinham acesso.",
   second_subtitle2:
     "Trabalhamos no <strong>desenvolvimento de soluções para o mercado financeiro</strong>, desde ferramentas para análise de dados que possibilitam aos nossos operadores efetuar negociações mais seguras. Até mesmo ferramentas de auto-trading.",
-  second_btn: "Lorem ipsum dolor",
+  second_btn: "Acessar Plataforma",
 
   third_title1: "Nosso CEO",
   third_title2: "Jaime Soler",
@@ -172,20 +183,29 @@ export const pt: Structure = {
     "<strong>2019</strong> Melhor Corretora Forex do Oriente Médio forex-awards.com",
   axi_4:
     "<strong>2020</strong> Melhor Agente Regional EMEA ADVFN International Financial Awards",
+
+  banner_title: "Conheça a plataforma de<br/> investimentos Alphax",
+  banner_btn: "Acessar Plataforma",
+  footer_info: "Gestora de Investimentos em Criptomoedas <br/> e Forex sediada na Suiça",  
+  footer_link: "Links",
+  footer_link1: "Quem Somos",
+  footer_link2: "Alphax Token",
+  footer_link3: "Brokers",
+
 };
 
 export const en: Structure = {
   nav_one: "About Us",
   nav_second: "Alphax Token",
   nav_third: "Brokers",
-  nav_btn: "Lorem ipsum dolor",
+  nav_btn: "Access Platform",
   first_title1: "Invest with ",
   first_title2: "safety ",
-  first_title3: "and intelligence in Cryptocurrencies and Forex",
+  first_title3: "and intelligence",
 
   first_subtitle:
     "We strive to provide our users with results that were previously only possible for large banks. We believe that everyone should have the opportunity to invest wisely and achieve their financial goals.",
-  first_btn: "Lorem ipsum dolor",
+  first_btn: "Access Platform",
 
   second_title1: "About ",
   second_title2: "Us",
@@ -193,13 +213,13 @@ export const en: Structure = {
     "We are an <strong>Investment Manager in Cryptocurrencies and Forex</strong> with an administrative office in Zurich, Switzerland. Our goal is to provide users with results that only large banks had access to.",
   second_subtitle2:
     "We work on <strong>developing solutions for the financial market</strong>, from data analysis tools that enable our traders to make safer trades. Even auto-trading tools.",
-  second_btn: "Lorem ipsum dolor",
+  second_btn: "Access Platform",
 
   third_title1: "Our CEO",
   third_title2: "Jaime Soler",
 
   third_subtitle1:
-    "<strong>entrepreneur</strong> with 15 years of experience in the Automotive Industry, in the Commercial and Marketing department, supplying luxury companies such as Rolls-Royce, Bentley, Mercedes, Jaguar, Lincoln, and other private companies.",
+    "<strong>Entrepreneur</strong> with 15 years of experience in the Automotive Industry, in the Commercial and Marketing department, supplying luxury companies such as Rolls-Royce, Bentley, Mercedes, Jaguar, Lincoln, and other private companies.",
   third_subtitle2:
     "<strong>Extensive knowledge of the European and Asian financial markets</strong>, as well as extensive knowledge of the Forex and Cryptocurrency markets.",
   third_subtitle3:
@@ -264,26 +284,33 @@ export const en: Structure = {
   axi_3: "<strong>2019</strong> Best Forex Broker Middle East forex-awards.com",
   axi_4:
     "<strong>2020</strong> Best Regional Agent EMEA ADVFN International Financial Awards",
-};
+    banner_title: "Meet the Alphax<br/> investment platform",
+    banner_btn: "Access Platform",
+    footer_info: "Swiss-based Cryptocurrency <br/> and Forex Investment Manager",  
+    footer_link: "Links",
+    footer_link1: "About Us", 
+    footer_link2: "Alphax Token", 
+    footer_link3: "Brokers",
+
+  };
 
 export const ru: Structure = {
   nav_one: "О нас",
   nav_second: "Токен Alphax",
   nav_third: "Брокеры",
-  nav_btn: "Lorem ipsum dolor",
+  nav_btn: "Платформа доступа",
   first_title1: "Инвестирование с ",
   first_title2: "безопасностью ",
-  first_title3: "и умом в криптовалюты и Форекс",
-  first_subtitle:
-    "Мы стремимся обеспечить нашим пользователям результаты, которые раньше были доступны только крупным банкам. Мы считаем, что каждый должен иметь возможность инвестировать мудро и достигать своих финансовых целей.",
-  first_btn: "Lorem ipsum dolor",
+  first_title3: "и интеллект",
+  first_subtitle: "Мы стремимся обеспечить нашим пользователям результаты, которые раньше были доступны только крупным банкам. Мы считаем, что каждый должен иметь возможность инвестировать мудро и достигать своих финансовых целей.",
+  first_btn: "Платформа доступа",
   second_title1: "Кто ",
   second_title2: "мы",
   second_subtitle1:
     "Мы являемся <strong>управляющими инвестициями в криптовалюты и Форекс</strong> с административным офисом в Цюрихе, Швейцария. Наша цель - обеспечить пользователям результаты, которые ранее были доступны только крупным банкам.",
   second_subtitle2:
     "Мы работаем над <strong>разработкой решений для финансового рынка</strong>, начиная с инструментов анализа данных, которые позволяют нашим трейдерам делать более безопасные сделки. До авто-торговых инструментов.",
-  second_btn: "Lorem ipsum dolor",
+  second_btn: "Платформа доступа",
   third_title1: "Наш CEO",
   third_title2: "Хайме Солер",
   third_subtitle1:
@@ -354,19 +381,26 @@ export const ru: Structure = {
     "<strong>2019</strong> Лучший брокер Форекс на Ближнем Востоке forex-awards.com",
   axi_4:
     "<strong>2020</strong> Лучший региональный агент EMEA ADVFN Международные финансовые награды",
+    banner_title: "Знакомство с инвестиционной<br/> платформой Alphax",
+    banner_btn: "Доступ к платформе",
+    footer_info: "Швейцарский инвестиционный менеджер  <br/>по криптовалютам и Forex" , 
+    footer_link: "Ссылки",
+    footer_link1: "О нас",
+    footer_link2: "Alphax Token",
+    footer_link3: "Брокеры",
 };
 
 export const es: Structure = {
   nav_one: "Quienes Somos",
   nav_second: "Token Alphax",
   nav_third: "Corredores",
-  nav_btn: "Lorem ipsum dolor",
+  nav_btn: "Acceso a la plataforma",
   first_title1: "Invierta con ",
   first_title2: "seguridad ",
-  first_title3: "e inteligencia en Criptomonedas y Forex",
+  first_title3: "e inteligencia",
   first_subtitle:
     "Nos esforzamos por ofrecer a nuestros usuarios resultados que antes sólo eran posibles para grandes bancos. Creemos que todos deberían tener la oportunidad de invertir con sabiduría y alcanzar sus objetivos financieros.",
-  first_btn: "Lorem ipsum dolor",
+  first_btn: "Acceso a la plataforma",
 
   second_title1: "Quienes ",
   second_title2: "Somos",
@@ -374,7 +408,7 @@ export const es: Structure = {
     "Somos una <strong>Gestora de Inversiones en Criptomonedas y Forex</strong> con oficina administrativa en Zúrich, Suiza. Nuestro objetivo es proporcionar a los usuarios resultados que hasta ahora sólo los grandes bancos tenían acceso.",
   second_subtitle2:
     "Trabajamos en el <strong>desarrollo de soluciones para el mercado financiero</strong>, desde herramientas para análisis de datos que permiten a nuestros operadores realizar operaciones más seguras. Hasta herramientas de auto-trading.",
-  second_btn: "Lorem ipsum dolor",
+  second_btn: "Acceso a la plataforma",
 
   third_title1: "Nuestro CEO",
   third_title2: "Jaime Soler",
@@ -453,4 +487,11 @@ export const es: Structure = {
     "<strong>2019</strong> Mejor Corredora de Forex del Oriente Medio en forex-awards.com",
   axi_4:
     "<strong>2020</strong> Mejor Agente Regional EMEA en ADVFN International Financial Awards",
+    banner_title: "Conozca la plataforma<br/> de inversión Alphax",
+    banner_btn: "Acceda a la plataforma",
+    footer_info: "Gestor de inversiones en criptomonedas <br/> y divisas con sede en Suiza",
+    footer_link: "Enlaces",
+    footer_link1: "Sobre nosotros",
+    footer_link2: "Alphax Token",
+    footer_link3: "Brokers",
 };

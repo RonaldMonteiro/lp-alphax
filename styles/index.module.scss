@@ -177,10 +177,11 @@ $gray: #a7a4a4;
       padding: 10px;
       @include flexbox(center, center, row);
       @include type(600, 14px, 20px, $tertiary);
-      width: 174px;
+      width: 185px;
       height: 43px;
       background: #ffffff;
       border-radius: 10px;
+      margin-left: 25px;
       filter: drop-shadow(0px 0px 50px #ffffff);
 
       @include screen-sm {
