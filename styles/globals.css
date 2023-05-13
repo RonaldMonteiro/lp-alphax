@@ -27,56 +27,54 @@ main {
 
 @media (max-width: 1300px) {
   main {
-    grid-template-rows: 150vh 70vh 70vh 110vh 100vh 160vh 50vh 0vh;
+    grid-template-rows: 110vh 80vh 80vh 110vh 100vh 120vh 50vh 50vh;
   }
 }
 
 @media (max-width: 1100px) {
   main {
-    grid-template-rows: 160vh 100vh 90vh 300vh 130vh 180vh 50vh 0vh;
+    grid-template-rows: 110vh 110vh 110vh 300vh 130vh 150vh 70vh 70vh;
   }
 }
 
 @media (max-width: 950px) {
   main {
-    grid-template-rows: 180vh 70vh 60vh 160vh 100vh 130vh 50vh 0vh;
+    grid-template-rows: 100vh 100vh 100vh 130vh 120vh 110vh 40vh 40vh;
   }
 }
 
 @media (max-width: 850px) {
   main {
-    grid-template-rows: 215vh 90vh 70vh 160vh 120vh 160vh 50vh 0vh;
+    grid-template-rows: 100vh 110vh 130vh 160vh 120vh 130vh 40vh 40vh;
   }
 }
 
 @media (max-width: 780px) {
   main {
-    grid-template-rows: 230vh 100vh 90vh 190vh 140vh 180vh 50vh 0vh;
+    grid-template-rows: 100vh 120vh 140vh 190vh 140vh 150vh 40vh 50vh;
   }
 }
 
 @media (max-width: 500px) {
   main {
-    grid-template-rows: 280vh 100vh 90vh 215vh 150vh 230vh 50vh 0vh;
+    grid-template-rows: 100vh 120vh 140vh 200vh 140vh 160vh 50vh 50vh;
   }
 }
 
 @media (max-width: 400px) {
   main {
-    grid-template-rows: 310vh 100vh 90vh 225vh 155vh 250vh 50vh 0vh;
+    grid-template-rows: 100vh 120vh 160vh 225vh 155vh 170vh 50vh 50vh;
   }
 }
 
 @media (max-width: 380px) {
   main {
-    grid-template-rows: 350vh 120vh 115vh 260vh 200vh 330vh 50vh 0vh;
+    grid-template-rows: 130vh 160vh 190vh 260vh 200vh 230vh 60vh 50vh;
   }
 }
 
 @media (max-width: 370px) {
   main {
-    grid-template-rows: 350vh 120vh 115vh 260vh 200vh 300vh 50vh 0vh;
+    grid-template-rows: 100vh 130vh 180vh 260vh 170vh 220vh 60vh 50vh;
   }
 }
-
-

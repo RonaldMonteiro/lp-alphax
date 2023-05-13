@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/index.module.scss";
 import btn from "@/styles/button.module.css";
-
+import Link from "next/link";
 import * as React from "react";
 import logo from "@/public/logo.png";
 import logoMobile from "@/public/logo-mobile.png";
@@ -126,7 +126,7 @@ export default function Home() {
     }
   }, [selectedOption]);
   const [open, setOpen] = React.useState(false);
-  const [country, setCountry] = React.useState('us');
+  const [country, setCountry] = React.useState("us");
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -141,26 +141,35 @@ export default function Home() {
     setAnchorEl(null);
   };
 
+  const [anchorElM, setAnchorElM] = React.useState<null | HTMLElement>(null);
+  const openMobile = Boolean(anchorElM);
+  const handleClickMobile = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElM(event.currentTarget);
+  };
+  const handleCloseM = () => {
+    setAnchorElM(null);
+  };
+
   function changeLangEN() {
     setChanged(en);
-    setCountry('us');
+    setCountry("us");
     setAnchorEl(null);
   }
 
   function changeLangPT() {
     setChanged(pt);
-    setCountry('br');
+    setCountry("br");
     setAnchorEl(null);
   }
   function changeLangES() {
     setChanged(es);
-    setCountry('es');
+    setCountry("es");
 
     setAnchorEl(null);
   }
   function changeLangRU() {
     setChanged(ru);
-    setCountry('ru');
+    setCountry("ru");
     setAnchorEl(null);
   }
 
@@ -192,80 +201,173 @@ export default function Home() {
               />
 
               <nav>
-                <a className={styles["nav-link"]}>{changed.nav_one}</a>
-                <a className={styles["nav-link"]}>{changed.nav_second}</a>
-                <a className={styles["nav-link"]}>{changed.nav_third}</a>
+                <a
+                  style={{ textDecoration: "none" }}
+                  href="#quemsomos"
+                  className={styles["nav-link"]}
+                >
+                  {changed.nav_one}
+                </a>
+                <a
+                  style={{ textDecoration: "none" }}
+                  href="#tokenalphax"
+                  className={styles["nav-link"]}
+                >
+                  {changed.nav_second}
+                </a>
+                <a
+                  style={{ textDecoration: "none" }}
+                  href="#brokers"
+                  className={styles["nav-link"]}
+                >
+                  {changed.nav_third}
+                </a>
               </nav>
             </div>
 
-            <div style={{display:'flex'}}>
+            <div className={styles["btn-country"]} style={{ display: "flex" }}>
+              <Button
+                id="basic-button"
+                aria-controls={opens ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={opens ? "true" : undefined}
+                onClick={handleClick}
+              >
+                <img
+                  style={{ height: "auto", width: "30px" }}
+                  src={`https://www.bandeirasnacionais.com/data/flags/w580/${country}.webp`}
+                ></img>
+              </Button>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={opens}
+                onClose={handleClose}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                <MenuItem
+                  onClick={changeLangEN}
+                  sx={{ fontSize: 12, color: "gray" }}
+                >
+                  <img
+                    style={{
+                      height: "auto",
+                      width: "25px",
+                      marginRight: "10px",
+                    }}
+                    src="https://www.bandeirasnacionais.com/data/flags/w580/us.webp"
+                  ></img>
+                  EN-US
+                </MenuItem>
+                <MenuItem
+                  onClick={changeLangES}
+                  sx={{ fontSize: 12, color: "gray" }}
+                >
+                  <img
+                    style={{
+                      height: "auto",
+                      width: "25px",
+                      marginRight: "10px",
+                    }}
+                    src="https://www.bandeirasnacionais.com/data/flags/w580/es.webp"
+                  ></img>
+                  ES-ES
+                </MenuItem>
+                <MenuItem
+                  onClick={changeLangPT}
+                  sx={{ fontSize: 12, color: "gray" }}
+                >
+                  <img
+                    style={{
+                      height: "auto",
+                      width: "25px",
+                      marginRight: "10px",
+                    }}
+                    src="https://www.bandeirasnacionais.com/data/flags/w580/br.webp"
+                  ></img>
+                  PT-BR
+                </MenuItem>
+                <MenuItem
+                  onClick={changeLangRU}
+                  sx={{ fontSize: 12, color: "gray" }}
+                >
+                  <img
+                    style={{
+                      height: "auto",
+                      width: "25px",
+                      marginRight: "10px",
+                    }}
+                    src="https://www.bandeirasnacionais.com/data/flags/w580/ru.webp"
+                  ></img>
+                  RU-RU
+                </MenuItem>
+              </Menu>
 
-            <Button
-              id="basic-button"
-              aria-controls={open ? "basic-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
-            >
-              <img
-                style={{ height: "auto", width: "30px" }}
-                src={`https://www.bandeirasnacionais.com/data/flags/w580/${country}.webp`}
-              ></img>
-            </Button>
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={opens}
-              onClose={handleClose}
-              MenuListProps={{
-                "aria-labelledby": "basic-button",
-              }}
-            >
-              <MenuItem
-                onClick={changeLangEN}
-                sx={{ fontSize: 12, color: "gray" }}
+              <a
+                href="https://office.alphaxcompany.com/login"
+                style={{ textDecoration: "none" }}
+                className={styles["nav-btn"]}
               >
-                <img
-                  style={{ height: "auto", width: "25px", marginRight: "10px" }}
-                  src="https://www.bandeirasnacionais.com/data/flags/w580/us.webp"
-                ></img>
-                EN-US
-              </MenuItem>
-              <MenuItem
-                onClick={changeLangES}
-                sx={{ fontSize: 12, color: "gray" }}
+                {changed.nav_btn}
+              </a>
+              <Button
+                className={styles["btn-mobile"]}
+                id="basic-buttons"
+                aria-controls={openMobile ? "basic-menus" : undefined}
+                aria-haspopup="true"
+                aria-expanded={openMobile ? "true" : undefined}
+                onClick={handleClickMobile}
+              ></Button>
+              {/* <button className={styles["btn-mobile"]}></button> */}
+              <Menu
+                id="basic-menus"
+                anchorEl={anchorElM}
+                open={openMobile}
+                onClose={handleCloseM}
+                MenuListProps={{
+                  "aria-labelledby": "basic-buttons",
+                }}
               >
-                <img
-                  style={{ height: "auto", width: "25px", marginRight: "10px" }}
-                  src="https://www.bandeirasnacionais.com/data/flags/w580/es.webp"
-                ></img>
-                ES-ES
-              </MenuItem>
-              <MenuItem
-                onClick={changeLangPT}
-                sx={{ fontSize: 12, color: "gray" }}
-              >
-                <img
-                  style={{ height: "auto", width: "25px", marginRight: "10px" }}
-                  src="https://www.bandeirasnacionais.com/data/flags/w580/br.webp"
-                ></img>
-                PT-BR
-              </MenuItem>
-              <MenuItem
-                onClick={changeLangRU}
-                sx={{ fontSize: 12, color: "gray" }}
-              >
-                <img
-                  style={{ height: "auto", width: "25px", marginRight: "10px" }}
-                  src="https://www.bandeirasnacionais.com/data/flags/w580/ru.webp"
-                ></img>
-                RU-RU
-              </MenuItem>
-            </Menu>
-
-            <a className={styles["nav-btn"]}>{changed.nav_btn}</a>
+                <MenuItem sx={{ fontSize: 12, color: "gray" }}>
+                  <a
+                    href="#quemsomos"
+                    style={{
+                      textDecoration: "none",
+                      fontSize: 12,
+                      color: "gray",
+                    }}
+                  >
+                    {changed.nav_one}
+                  </a>
+                </MenuItem>
+                <MenuItem sx={{ fontSize: 12, color: "gray" }}>
+                  <a
+                    href="#tokenalphax"
+                    style={{
+                      textDecoration: "none",
+                      fontSize: 12,
+                      color: "gray",
+                    }}
+                  >
+                    {changed.nav_second}
+                  </a>
+                </MenuItem>
+                <MenuItem sx={{ fontSize: 12, color: "gray" }}>
+                  <a
+                    href="#brokers"
+                    style={{
+                      textDecoration: "none",
+                      fontSize: 12,
+                      color: "gray",
+                    }}
+                  >
+                    {changed.nav_third}
+                  </a>
+                </MenuItem>
+              </Menu>
             </div>
-            <button className={styles["btn-mobile"]}></button>
           </header>
           <div className={styles["first-box-headline"]}>
             <h1>
@@ -273,7 +375,10 @@ export default function Home() {
               {changed.first_title3}
             </h1>
             <p>{changed.first_subtitle}</p>
-            <a>
+            <a
+              href="https://office.alphaxcompany.com/login"
+              style={{ textDecoration: "none" }}
+            >
               {changed.first_btn}
               <Image src={arrow} height={0} width={0} alt="" />
             </a>
@@ -321,7 +426,7 @@ export default function Home() {
           <Image src={coins} height={0} width={0} alt="" />
 
           <div>
-            <h1>
+            <h1 id="quemsomos">
               {changed.second_title1}
               <span>{changed.second_title2}</span>
             </h1>
@@ -333,7 +438,9 @@ export default function Home() {
               dangerouslySetInnerHTML={{ __html: changed.second_subtitle2 }}
             ></p>
 
-            <a>{changed.second_btn}</a>
+            <a href="https://office.alphaxcompany.com/login">
+              {changed.second_btn}
+            </a>
           </div>
         </section>
         <section className={styles["third-section"]}>
@@ -381,7 +488,7 @@ export default function Home() {
         </section>
         <section className={styles["fifth-section"]}>
           <div className={styles["fifth-frame"]}>
-            <div className={styles["nav-select"]}>
+            <div id="tokenalphax" className={styles["nav-select"]}>
               <label className={styles["radio"]}>
                 <input
                   type="radio"
@@ -433,7 +540,9 @@ export default function Home() {
           </div>
         </section>
         <section className={styles["sixth-section"]}>
-          <h1 style={{ marginBottom: "10px" }}>{changed.sixth_title}</h1>
+          <h1 id="brokers" style={{ marginBottom: "10px" }}>
+            {changed.sixth_title}
+          </h1>
           <p className={styles["sixth-paragraph"]}>{changed.sixth_paragraph}</p>
           <div className={styles["sixth-frame"]}>
             <div className={styles["sixth-card"]}>
@@ -522,7 +631,12 @@ export default function Home() {
         <section className={styles["seventh-section"]}>
           <div>
             <h1 dangerouslySetInnerHTML={{ __html: changed.banner_title }}></h1>
-            <a>{changed.banner_btn}</a>
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://office.alphaxcompany.com/login"
+            >
+              {changed.banner_btn}
+            </a>
           </div>
         </section>
         <footer className={styles.footer}>
@@ -538,9 +652,15 @@ export default function Home() {
             </div>
             <div className={styles["card-link"]}>
               <h1>{changed.footer_link}</h1>
-              <a>{changed.footer_link1}</a>
-              <a>{changed.footer_link2}</a>
-              <a>{changed.footer_link3}</a>
+              <a style={{ textDecoration: "none" }} href="#quemsomos">
+                {changed.footer_link1}
+              </a>
+              <a style={{ textDecoration: "none" }} href="#tokenalphax">
+                {changed.footer_link2}
+              </a>
+              <a style={{ textDecoration: "none" }} href="#brokers">
+                {changed.footer_link3}
+              </a>
             </div>
           </div>
           <div className={styles["footer-divider"]}></div>
